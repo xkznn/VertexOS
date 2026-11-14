@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /blocked.html
 
-# VertexOS - primary domain (GitHub Pages)
-Sitemap: https://xkznn.github.io/VertexOS/sitemap.xml
+# VertexOS - primary domain (Cloudflare Pages)
+Sitemap: https://vertexos.pages.dev/sitemap.xml

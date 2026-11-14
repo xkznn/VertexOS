@@ -15,9 +15,10 @@ const SHOT_FINDER = asset("images/domain-linkfinder.webp");
 
 /** Every address that serves Vertex OS itself. */
 const DOMAINS: DomainItem[] = [
+  { name: "Cloudflare Pages", url: "https://vertexos.pages.dev/", icon: asset("images/v-market-logo.jpg"), shot: SHOT_OS, note: "official site", tint: true },
   { name: "Netlify", url: "https://vertex-os-site.netlify.app/", icon: asset("images/netlify.png"), shot: SHOT_OS, note: "global cdn" },
   { name: "Vercel", url: "https://vertex-os-ebon.vercel.app/", icon: asset("images/vercel.png"), shot: SHOT_OS, note: "edge deploy" },
-  { name: "GitHub Pages", url: "https://xkznn.github.io/VertexOS/", icon: asset("images/github.svg"), shot: SHOT_OS, note: "official site", tint: true },
+  { name: "GitHub Pages", url: "https://xkznn.github.io/VertexOS/", icon: asset("images/github.svg"), shot: SHOT_OS, note: "mirror" },
   { name: "B-CDN", url: "https://s3westamazonaws.b-cdn.net/", icon: asset("images/v-cloud-logo.png"), shot: SHOT_OS, note: "second domain" },
   { name: "Bunny CDN", url: "https://vertexosweb.b-cdn.net/", icon: asset("images/v-cloud-logo.png"), shot: SHOT_OS, note: "our cdn mirror" },
   { name: "Link Finder", url: "https://link-finder.netlify.app/", icon: asset("images/links.svg"), shot: SHOT_FINDER, note: "our other tool" },
