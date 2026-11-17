@@ -4693,7 +4693,7 @@ a.toast { text-decoration: none; color: var(--ink); cursor: pointer; }
 .win-settings-choice-swatch.light { background: linear-gradient(135deg, #eef3f9, #ffffff 70%); }
 .win-settings-wp-hero { display: flex; align-items: center; gap: 16px; padding: 14px 0; }
 .win-settings-wp-preview { width: 132px; height: 74px; flex: 0 0 auto; border-radius: 8px; border: 1px solid var(--line); overflow: hidden; display: grid; place-items: center; background: #050a13; }
-.win-settings-wp-preview img { width: 100%; height: 100%; object-fit: cover; }
+.win-settings-wp-preview img, .win-settings-wp-preview video { width: 100%; height: 100%; object-fit: cover; }
 .win-settings-wp-fallback { color: var(--muted); font-size: 11px; text-align: center; padding: 4px; }
 .win-settings-wp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; padding: 14px 0; }
 .win-settings-wp { display: flex; flex-direction: column; gap: 6px; padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: rgba(0,0,0,.2); color: var(--muted); font: inherit; font-size: 11px; cursor: pointer; }
@@ -4701,11 +4701,29 @@ a.toast { text-decoration: none; color: var(--ink); cursor: pointer; }
 .win-settings-wp > span:last-child { padding: 0 8px 8px; text-align: left; }
 .win-settings-wp .win-settings-wp-fallback { aspect-ratio: 16 / 10; display: grid; place-items: center; }
 .win-settings-wp.active { border-color: var(--cyan-strong); box-shadow: 0 0 0 1px var(--cyan-strong); }
+.thanks-event-card { position: relative; overflow: hidden; border-color: rgba(255, 196, 107, .36); background: radial-gradient(circle at 92% -10%, rgba(255, 196, 107, .2), transparent 42%), linear-gradient(135deg, rgba(224, 98, 26, .14), rgba(255, 255, 255, .025)); }
+.thanks-event-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 16px 0 8px; }
+.thanks-event-head h3 { margin: 2px 0 4px; font-family: var(--font-display); font-size: 22px; color: var(--ink); }
+.thanks-event-head p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.thanks-event-kicker { display: inline-block; color: #ffcf8a; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.thanks-event-emoji { font-size: 38px; line-height: 1; filter: drop-shadow(0 8px 18px rgba(224, 98, 26, .45)); }
+.thanks-event-feature { display: grid; grid-template-columns: minmax(190px, 1.1fr) 1fr; gap: 18px; align-items: center; padding: 8px 0 18px; }
+.thanks-event-preview { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 196, 107, .38); background: #0b0b0d; box-shadow: 0 12px 28px -18px #000; }
+.thanks-event-preview video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.thanks-event-live { position: absolute; left: 10px; top: 10px; padding: 5px 9px; border-radius: 999px; border: 1px solid rgba(255, 196, 107, .42); background: rgba(7, 10, 16, .72); color: #ffd9a0; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; backdrop-filter: blur(8px); }
+.thanks-event-copy { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.thanks-event-copy strong { color: var(--ink); font-size: 16px; }
+.thanks-event-copy small { color: #e0a15a; font-size: 11px; letter-spacing: .03em; }
+.thanks-event-copy p { margin: 0 0 4px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.thanks-event-apply { padding: 9px 14px; border: 0; border-radius: 8px; background: linear-gradient(135deg, #ffd9a0, #e0621a); color: #251205; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; box-shadow: 0 8px 20px -12px #e0621a; }
+.thanks-event-apply:hover { filter: brightness(1.07); }
+.thanks-event-note { color: var(--dim); font-size: 10px; }
+.thanks-event-card.is-active { border-color: rgba(255, 196, 107, .78); box-shadow: 0 0 0 1px rgba(255, 196, 107, .2), 0 20px 50px -40px rgba(224, 98, 26, .85); }
 .win-settings-result { display: flex; flex-direction: column; gap: 2px; width: 100%; padding: 12px 14px; margin-bottom: 8px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.03); color: var(--muted); font: inherit; text-align: left; cursor: pointer; }
 .win-settings-result:hover { border-color: var(--cyan-strong); }
 .win-settings-result strong { color: var(--ink); font-size: 13px; }
 .win-settings-result small { font-size: 12px; }
-@media (max-width: 720px) { .win-settings-body { grid-template-columns: 1fr; } .win-settings-nav { flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line); } .win-settings-nav button { width: auto; white-space: nowrap; } }
+@media (max-width: 720px) { .win-settings-body { grid-template-columns: 1fr; } .win-settings-nav { flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line); } .win-settings-nav button { width: auto; white-space: nowrap; } .thanks-event-feature { grid-template-columns: 1fr; } }
 
 /* light color mode overrides */
 html[data-theme="light"] { --ink: #0e1726; --muted: #586a80; --dim: #7f8fa3; --line: rgba(20, 40, 70, .14); --line-strong: rgba(20, 40, 70, .26); --glass: rgba(255, 255, 255, .78); --glass-heavy: rgba(255, 255, 255, .95); --cyan: #0f86ad; --cyan-strong: #0b6f92; }
@@ -4719,6 +4737,10 @@ html[data-theme="light"] .win-settings-nav button:hover { background: rgba(10, 3
 html[data-theme="light"] .win-settings-card { background: #ffffff; box-shadow: 0 1px 2px rgba(20, 40, 70, .06); }
 html[data-theme="light"] .win-settings-search { background: #ffffff; }
 html[data-theme="light"] .win-settings-wp-preview { background: #eef2f7; }
+html[data-theme="light"] .thanks-event-card { background: radial-gradient(circle at 92% -10%, rgba(255, 196, 107, .32), transparent 44%), linear-gradient(135deg, rgba(224, 98, 26, .1), #fff 66%); }
+html[data-theme="light"] .thanks-event-kicker,
+html[data-theme="light"] .thanks-event-copy small { color: #a95418; }
+html[data-theme="light"] .thanks-event-apply { background: linear-gradient(135deg, #d97826, #b34c12); color: #fff; }
 
 /* ── Now Playing media card ── */
 .np-card { position: fixed; right: 34px; bottom: 110px; z-index: 9; width: min(340px, calc(100vw - 40px)); display: flex; flex-direction: column; gap: 11px; padding: 14px 15px; border: 1px solid rgba(140, 200, 255, .22); border-radius: 18px; background: linear-gradient(150deg, rgba(21, 30, 47, .94), rgba(8, 13, 23, .96)); box-shadow: 0 24px 64px -20px rgba(0, 0, 0, .85), inset 0 1px 0 rgba(255, 255, 255, .08); backdrop-filter: blur(20px) saturate(140%); overflow: hidden; animation: np-in .4s cubic-bezier(.2, .9, .3, 1.18) both; }
@@ -4781,46 +4803,141 @@ html[data-theme="light"] .win-settings-wp-preview { background: #eef2f7; }
 .start-panel .power-button:hover { color: #fff; background: rgba(255,90,90,.18); border-color: rgba(255,90,90,.5); }
 @media (max-width: 560px) { .start-panel { width: calc(100% - 20px); padding: 18px 16px 14px; border-radius: 22px; } .start-panel .pinned-grid { grid-template-columns: repeat(3, 1fr); } }
 
-/* ── Halloween seasonal theme (October) ── */
-html[data-season="halloween"] {
-  --cyan: #ffb057;
-  --cyan-strong: #ff7a18;
-  --violet: #b98cff;
-  --orange: #ffbe7b;
+/* ── Thanksgiving seasonal theme (November) ── */
+html[data-season="thanksgiving"] {
+  --cyan: #ffc46b;
+  --cyan-strong: #e0621a;
+  --violet: #c97b3c;
+  --orange: #ffd9a0;
 }
-html[data-season="halloween"] .os-root::after { opacity: .16; }
-html[data-season="halloween"] .dock { border-color: rgba(255,140,40,.24); }
-html[data-season="halloween"] .dock-button:hover { box-shadow: 0 0 0 1px rgba(255,140,40,.34), 0 12px 30px rgba(255,110,20,.26); }
+html[data-season="thanksgiving"] .os-root::after { opacity: .14; }
 
-.hallo-wp { position: absolute; inset: 0; overflow: hidden; background: #0a0512; }
-.hallo-wp-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-
-.hallo-decor { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
-.hallo-web { position: absolute; width: 132px; height: 132px; opacity: .32; }
-.hallo-web--tl { top: -6px; left: -6px; }
-.hallo-web--tr { top: -6px; right: -6px; transform: scaleX(-1); }
-.hallo-fog { position: absolute; left: -10%; right: -10%; bottom: -50px; height: 260px; pointer-events: none;
-  background: radial-gradient(58% 100% at 28% 100%, rgba(152,120,200,.18), transparent 70%),
-              radial-gradient(66% 100% at 74% 100%, rgba(120,90,180,.16), transparent 70%);
-  filter: blur(7px); animation: hallo-fog-drift 18s ease-in-out infinite alternate; }
-@keyframes hallo-fog-drift { from { transform: translateX(-4%); } to { transform: translateX(4%); } }
-.hallo-bat { position: absolute; top: var(--top, 20%); left: -70px; width: 34px; height: 17px; color: #0a0512;
-  opacity: .82; animation: hallo-fly var(--dur, 26s) linear infinite; animation-delay: var(--d, 0s); }
-@keyframes hallo-fly {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(55vw, -26px) rotate(-8deg); }
-  100% { transform: translate(122vw, 12px) rotate(6deg); }
+/* Animated harvest decorations: turkeys, falling maple leaves and corner garlands. */
+.thanks-decor { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+.thanks-glow { position: absolute; inset: 0; background:
+  radial-gradient(42% 52% at 8% 0%, rgba(255,196,107,.16), transparent 72%),
+  radial-gradient(38% 50% at 92% 4%, rgba(224,98,26,.14), transparent 74%),
+  radial-gradient(60% 40% at 50% 108%, rgba(180,83,9,.16), transparent 72%); }
+.thanks-garland { position: absolute; top: -26px; width: 214px; height: auto; opacity: .68; filter: drop-shadow(0 10px 20px rgba(48,21,4,.28)); }
+.thanks-garland--tl { left: -26px; }
+.thanks-garland--tr { right: -26px; transform: scaleX(-1); }
+.thanks-leaf { position: absolute; top: -6vh; left: var(--x); width: var(--size); height: calc(var(--size) * 1.15); opacity: 0;
+  animation: thanks-leaf-fall var(--dur) linear infinite; animation-delay: var(--delay); will-change: transform;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,.22)); }
+@keyframes thanks-leaf-fall {
+  0% { transform: translate3d(0, -8vh, 0) rotate(0deg); opacity: 0; }
+  9% { opacity: .9; }
+  72% { opacity: .78; }
+  100% { transform: translate3d(var(--drift, 48px), 112vh, 0) rotate(var(--spin, 300deg)); opacity: 0; }
+}
+.thanks-turkey { position: absolute; left: -220px; bottom: var(--bottom, 12%); width: 158px; height: 126px; opacity: .9;
+  animation: thanks-turkey-walk var(--dur, 50s) linear infinite; animation-delay: var(--delay, 0s);
+  will-change: transform; transform-origin: 50% 100%; filter: drop-shadow(0 12px 18px rgba(0,0,0,.34)); }
+.thanks-turkey svg { display: block; width: 100%; height: 100%; animation: thanks-turkey-bob .52s ease-in-out infinite alternate; transform-origin: 50% 100%; }
+@keyframes thanks-turkey-walk {
+  from { transform: translate3d(0, 0, 0) scale(var(--scale, 1)); }
+  to { transform: translate3d(calc(100vw + 340px), 0, 0) scale(var(--scale, 1)); }
+}
+@keyframes thanks-turkey-bob {
+  from { transform: translateY(0) rotate(-1deg); }
+  to { transform: translateY(-4px) rotate(1deg); }
 }
 
-.update-hallo { display: flex; align-items: center; gap: 15px; margin: 18px 0 4px; padding: 16px 18px; border-radius: 16px;
-  border: 1px solid rgba(255,140,40,.42);
-  background: linear-gradient(120deg, rgba(255,122,24,.18), rgba(150,60,220,.16));
-  box-shadow: inset 0 0 32px rgba(255,120,20,.12); }
-.update-hallo-emoji { font-size: 34px; line-height: 1; filter: drop-shadow(0 0 12px rgba(255,140,40,.6)); }
-.update-hallo strong { display: block; font: 800 18px var(--font-display); letter-spacing: .07em; color: #ffb057; text-transform: uppercase; }
-.update-hallo span { display: block; margin-top: 4px; color: var(--muted); font-size: 12.5px; }
+/* Harvest-gold dock. */
+html[data-season="thanksgiving"] .dock {
+  border-color: rgba(255,190,90,.4);
+  background: linear-gradient(180deg, rgba(78,42,13,.46), rgba(25,14,6,.6));
+  box-shadow: 0 20px 60px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,224,164,.28), 0 0 0 1px rgba(255,180,70,.06);
+}
+html[data-season="thanksgiving"] .dock-separator { background: linear-gradient(180deg, transparent, rgba(255,196,107,.58), transparent); }
+html[data-season="thanksgiving"] .dock-button { color: #ffdca4; }
+html[data-season="thanksgiving"] .dock-button:hover,
+html[data-season="thanksgiving"] .dock-button.active { background: rgba(255,180,80,.17); }
+html[data-season="thanksgiving"] .dock-button:hover { box-shadow: 0 0 0 1px rgba(255,196,107,.4), 0 12px 30px rgba(224,98,26,.26); }
+html[data-season="thanksgiving"] .dock-button.open::after { background: #ffc46b; box-shadow: 0 0 12px rgba(255,196,107,.95); }
 
-@media (prefers-reduced-motion: reduce) { .hallo-bat, .hallo-fog { animation: none; } }
+/* Harvest-gold Start menu. */
+html[data-season="thanksgiving"] .start-panel {
+  border-color: rgba(255,190,90,.34);
+  background:
+    radial-gradient(120% 130% at 12% 0%, rgba(255,180,80,.16), transparent 45%),
+    radial-gradient(130% 130% at 100% 110%, rgba(194,65,12,.18), transparent 50%),
+    linear-gradient(180deg, rgba(48,29,12,.97), rgba(17,10,5,.98));
+  box-shadow: 0 34px 90px rgba(0,0,0,.62), inset 0 1px 0 rgba(255,224,164,.12);
+}
+html[data-season="thanksgiving"] .start-avatar { background: linear-gradient(140deg, #ffd08a, #e0621a); box-shadow: 0 8px 22px rgba(224,98,26,.42); color: #2a1206; }
+html[data-season="thanksgiving"] .start-all-btn:hover { color: #ffe6bd; background: rgba(255,196,107,.14); border-color: rgba(255,196,107,.48); }
+html[data-season="thanksgiving"] .start-panel .start-search { background: rgba(255,196,107,.055); border-color: rgba(255,190,90,.22); }
+html[data-season="thanksgiving"] .start-panel .start-search:focus-within { border-color: rgba(255,196,107,.62); box-shadow: 0 0 0 4px rgba(224,98,26,.14); background: rgba(255,196,107,.09); }
+html[data-season="thanksgiving"] .start-panel .panel-heading h3 { color: #f4c17e; }
+html[data-season="thanksgiving"] .start-panel .pinned-item { background: rgba(255,196,107,.045); }
+html[data-season="thanksgiving"] .start-panel .pinned-item::before { background: radial-gradient(80% 70% at 50% 0%, rgba(255,196,107,.24), transparent 70%); }
+html[data-season="thanksgiving"] .start-panel .pinned-item:hover { background: rgba(255,196,107,.11); border-color: rgba(255,196,107,.4); box-shadow: 0 14px 30px rgba(0,0,0,.42), 0 0 0 1px rgba(255,196,107,.12); }
+html[data-season="thanksgiving"] .start-panel .panel-footer { border-top-color: rgba(255,196,107,.2); }
+
+/* Harvest-gold widgets. */
+html[data-season="thanksgiving"] .side-head { color: #d9a566; }
+html[data-season="thanksgiving"] .side-label { color: #e8bb82; }
+html[data-season="thanksgiving"] .side-dot { background: #ffc46b; box-shadow: 0 0 9px rgba(255,196,107,.9); }
+html[data-season="thanksgiving"] .side-dot--live { background: #fb923c; box-shadow: 0 0 9px rgba(251,146,60,.85); }
+html[data-season="thanksgiving"] .side-dot--ok { background: #a3e635; box-shadow: 0 0 9px rgba(163,230,53,.75); }
+html[data-season="thanksgiving"] .side-card {
+  border-color: rgba(255,190,90,.26);
+  background: linear-gradient(135deg, rgba(64,36,13,.74), rgba(20,12,6,.6));
+  box-shadow: inset 0 1px 0 rgba(255,224,164,.08);
+}
+html[data-season="thanksgiving"] .side-card:hover {
+  border-color: rgba(255,196,107,.58);
+  box-shadow: 0 16px 34px rgba(0,0,0,.44), inset 0 0 0 1px rgba(255,196,107,.14), 0 0 26px rgba(224,98,26,.12);
+}
+html[data-season="thanksgiving"] .side-card--deck .side-art { background: linear-gradient(135deg, #f59e0b, #b45309); box-shadow: 0 8px 20px rgba(245,158,11,.3); }
+html[data-season="thanksgiving"] .side-card--media .side-art { background: linear-gradient(135deg, #d97706, #7c2d12); box-shadow: 0 8px 20px rgba(217,119,6,.3); color: #ffe6bd; }
+html[data-season="thanksgiving"] .side-card--updates .side-art { background: linear-gradient(135deg, #a3e635, #ca8a04); box-shadow: 0 8px 20px rgba(163,230,53,.22); color: #231407; }
+html[data-season="thanksgiving"] .side-chip { color: #ffe6bd; background: rgba(255,196,107,.14); border-color: rgba(255,196,107,.38); }
+html[data-season="thanksgiving"] .side-card:hover .side-cta { background: #ffc46b; color: #2a1206; }
+html[data-season="thanksgiving"] .desktop-widget {
+  border-color: rgba(255,190,90,.24);
+  background: linear-gradient(145deg, rgba(63,37,15,.7), rgba(18,11,6,.6));
+  box-shadow: 0 15px 36px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,224,164,.1), inset 0 -1px 0 rgba(194,65,12,.12);
+}
+html[data-season="thanksgiving"] .desktop-widget::before { background: radial-gradient(ellipse at 12% 0%, rgba(255,196,107,.16), transparent 46%); }
+
+/* Harvest-gold Config / Settings. */
+html[data-season="thanksgiving"] .win-settings { background: linear-gradient(150deg, #1c120a, #0c0805 58%, #150d07); }
+html[data-season="thanksgiving"] .win-settings-top {
+  background: linear-gradient(90deg, rgba(224,98,26,.18), rgba(255,196,107,.045));
+  border-bottom-color: rgba(255,190,90,.25);
+}
+html[data-season="thanksgiving"] .win-settings-avatar { background: linear-gradient(135deg, #ffc46b, #e0621a); color: #2a1206; }
+html[data-season="thanksgiving"] .win-settings-search { background: rgba(0,0,0,.3); border-color: rgba(255,190,90,.22); }
+html[data-season="thanksgiving"] .win-settings-search:focus-within { border-color: rgba(255,196,107,.55); box-shadow: 0 0 0 3px rgba(224,98,26,.12); }
+html[data-season="thanksgiving"] .win-settings-nav { background: rgba(255,196,107,.035); border-right-color: rgba(255,190,90,.18); }
+html[data-season="thanksgiving"] .win-settings-nav button:hover { background: rgba(255,196,107,.08); color: #ffe6bd; }
+html[data-season="thanksgiving"] .win-settings-nav button.active { background: rgba(224,98,26,.2); color: #ffe6bd; box-shadow: inset 3px 0 0 #ffc46b; }
+html[data-season="thanksgiving"] .win-settings-card { background: rgba(255,196,107,.045); border-color: rgba(255,190,90,.2); }
+html[data-season="thanksgiving"] .win-settings-badge { background: rgba(255,196,107,.16); color: #ffe6bd; }
+html[data-season="thanksgiving"] .win-settings-row { border-bottom-color: rgba(255,190,90,.14); }
+html[data-season="thanksgiving"] .win-settings-choice-card { background: rgba(255,196,107,.035); border-color: rgba(255,190,90,.2); }
+html[data-season="thanksgiving"] .win-settings-choice-card.active { border-color: #ffc46b; box-shadow: 0 0 0 1px #ffc46b; }
+
+@media (max-width: 700px) {
+  .thanks-garland { width: 158px; top: -18px; }
+  .thanks-garland--tl { left: -20px; }
+  .thanks-garland--tr { right: -20px; }
+  .thanks-turkey { width: 122px; height: 98px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thanks-leaf, .thanks-turkey, .thanks-turkey svg { animation: none; }
+  .thanks-leaf { display: none; }
+}
+
+.update-thanks { display: flex; align-items: center; gap: 15px; margin: 18px 0 4px; padding: 16px 18px; border-radius: 16px;
+  border: 1px solid rgba(224,98,26,.42);
+  background: linear-gradient(120deg, rgba(255,158,58,.18), rgba(150,92,26,.16));
+  box-shadow: inset 0 0 32px rgba(255,150,40,.12); }
+.update-thanks-emoji { font-size: 34px; line-height: 1; filter: drop-shadow(0 0 12px rgba(255,170,60,.6)); }
+.update-thanks strong { display: block; font: 800 18px var(--font-display); letter-spacing: .07em; color: #ffc46b; text-transform: uppercase; }
+.update-thanks span { display: block; margin-top: 4px; color: var(--muted); font-size: 12.5px; }
 
 /* ── Music widgets (movable now-playing) ── */
 .mw-layer { position: absolute; inset: 0; z-index: 9; pointer-events: none; }
@@ -5003,6 +5120,60 @@ html[data-theme="light"] .msgs-banner { background: rgba(250, 250, 252, .9); bor
 .win-settings-note { margin: -6px 0 4px; font-size: 12px; color: var(--muted); line-height: 1.45; }
 .win-settings-choice-swatch.vertex { background: linear-gradient(135deg, #0a1320, #050a13 65%); }
 .win-settings-choice-swatch.macos { background: linear-gradient(135deg, #6b2b8a, #ff4d97 55%, #ff7a3d); }
+
+/* Upcoming Windows 11 system teaser (Config → System) */
+.win-settings-upcoming {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px dashed rgba(90, 170, 255, .4);
+  border-radius: 10px;
+  background: linear-gradient(110deg, rgba(0, 120, 212, .12), rgba(0, 183, 195, .05));
+  cursor: default;
+}
+.win-settings-upcoming-swatch {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(120, 190, 255, .35);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0067c0, #00a4ef 55%, #69c9d0);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25);
+}
+.win-settings-upcoming-logo {
+  display: grid;
+  grid-template-columns: repeat(2, 11px);
+  grid-template-rows: repeat(2, 11px);
+  gap: 2px;
+}
+.win-settings-upcoming-logo i { background: #fff; border-radius: 1px; }
+.win-settings-upcoming-copy { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 2px; }
+.win-settings-upcoming-kicker { color: #7cc7ff; font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+.win-settings-upcoming-copy strong { color: var(--ink); font-size: 14px; }
+.win-settings-upcoming-copy small { color: var(--muted); font-size: 12px; line-height: 1.4; }
+.win-settings-upcoming-badge {
+  flex: 0 0 auto;
+  padding: 5px 10px;
+  border: 1px solid rgba(124, 199, 255, .35);
+  border-radius: 999px;
+  background: rgba(0, 120, 212, .16);
+  color: #a9dbff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+@media (max-width: 720px) {
+  .win-settings-upcoming { align-items: flex-start; flex-wrap: wrap; }
+  .win-settings-upcoming-badge { margin-left: 78px; }
+}
+html[data-theme="light"] .win-settings-upcoming { border-color: rgba(0, 120, 212, .3); background: linear-gradient(110deg, rgba(0, 120, 212, .08), rgba(0, 183, 195, .04)); }
+html[data-theme="light"] .win-settings-upcoming-kicker { color: #0067c0; }
+html[data-theme="light"] .win-settings-upcoming-badge { border-color: rgba(0, 120, 212, .28); background: rgba(0, 120, 212, .1); color: #005a9e; }
 
 /* ============================================================
    macOS system style — traffic-light window chrome

@@ -18,7 +18,7 @@ import { JarvisSurface } from "./components/jarvis-ai";
 import { BrowserSurface, ProxyUrlFrame } from "./components/browser-app";
 import moviesAppHtml from "./movies/app.html?raw";
 import { VertexStudioWallpaper } from "./components/vertex-wallpaper";
-import { HalloweenDecor, HalloweenWallpaper } from "./components/halloween";
+import { ThanksgivingDecor } from "./components/thanksgiving";
 import { MusicWidgetLayer, MusicWidgetManager } from "./components/music-widgets";
 import { LockAppsLayer, LockAppsManager, recordRecentApp } from "./components/lock-apps";
 import { AdminSurface } from "./components/admin-app";
@@ -44,7 +44,7 @@ import { getMediaSession, setMediaSession, notifyMediaSession, subscribeMediaSes
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const asset = (path: string) => assetUrl(base, path);
 const isGitHubPages = import.meta.env.BASE_URL.startsWith("/vertexosweb");
-type WallpaperId = "vertex-studio" | "halloween" | "macos-default" | "macos-lock" | "singularity" | "snake-skeleton" | "snow-fox" | "cine55" | "gojo" | "rainy-city" | "green-anime" | "brother" | "99-med" | "gojo-sukuna" | "sukuna-fire" | "desktop-lines" | "skello" | "we-black-hole" | "we-snow-fox" | "we-gojo-sukuna" | "we-sukuna-fire" | "we-cine-55" | "we-snake" | "we-green-anime" | "we-brother" | "we-gojo" | "we-rainy-city" | "we-desktop-lines" | "we-skello" | "we-99-med" | "we-45e33" | "we-f1-formula" | "we-hunt-shadow-2" | "we-minecraft-01" | "we-minecraft-02" | "we-minecraft-03" | "we-monkey" | "we-supra-drift" | "we-yuji-52" | "we-cozy-fox" | "we-yuta" | "we-bmw-car-driving" | "we-eyes-toward-heaven" | "we-goku-ultra" | "we-galaxy-eyes" | "we-celestial-battle" | "we-tess-kotkin" | "we-yuta-rika" | "we-satoru-gojo" | "we-dark-angel" | "we-makima-devilish" | "we-makima-burning" | "we-haimiya-mio" | "we-toji" | "we-mamonir" | "we-lantern-festival" | "we-miyabi" | "we-qingxiao" | "we-megumin" | "we-odette" | "we-blue-sky" | "we-frutiger" | "we-synthwave-dmc" | "we-zankou" | "we-ghost-rider" | "we-molala" | "we-dark-king" | "we-celestial-veil" | "we-miku-nakano" | "we-gotoubun" | "we-quintuplets" | "we-black-silk-waves" | "we-blue-dragon-logo" | "we-astra-yao" | "we-luo-tianyi-christmas" | "we-mc-northern-light" | "we-mc-falling-snow" | "we-mc-aquarium" | "we-mc-holiday-heart" | "we-mc-fireplace" | "we-mc-panels" | "we-mc-cherry-blossom" | "we-mc-raindrops" | "we-silver-surfer" | "we-girl-behind-curtains" | "we-vagabond-miyamoto" | "we-itachi-crow" | "we-gojo-hollow" | "we-quintuplets-sister" | "we-yuta-okkotsu" | "we-gojo-vs-sukuna-2" | "we-gojo-cursed-world" | "we-gojo-six-eyes" | "we-frieren-blue-horizon" | "we-frieren-blooming-stream" | "we-nissan-skyline-r33-mc" | "we-torii";
+type WallpaperId = "vertex-studio" | "thanksgiving-snowflakes" | "macos-default" | "macos-lock" | "singularity" | "snake-skeleton" | "snow-fox" | "cine55" | "gojo" | "rainy-city" | "green-anime" | "brother" | "99-med" | "gojo-sukuna" | "sukuna-fire" | "desktop-lines" | "skello" | "we-black-hole" | "we-snow-fox" | "we-gojo-sukuna" | "we-sukuna-fire" | "we-cine-55" | "we-snake" | "we-green-anime" | "we-brother" | "we-gojo" | "we-rainy-city" | "we-desktop-lines" | "we-skello" | "we-99-med" | "we-45e33" | "we-f1-formula" | "we-hunt-shadow-2" | "we-minecraft-01" | "we-minecraft-02" | "we-minecraft-03" | "we-monkey" | "we-supra-drift" | "we-yuji-52" | "we-cozy-fox" | "we-yuta" | "we-bmw-car-driving" | "we-eyes-toward-heaven" | "we-goku-ultra" | "we-galaxy-eyes" | "we-celestial-battle" | "we-tess-kotkin" | "we-yuta-rika" | "we-satoru-gojo" | "we-dark-angel" | "we-makima-devilish" | "we-makima-burning" | "we-haimiya-mio" | "we-toji" | "we-mamonir" | "we-lantern-festival" | "we-miyabi" | "we-qingxiao" | "we-megumin" | "we-odette" | "we-blue-sky" | "we-frutiger" | "we-synthwave-dmc" | "we-zankou" | "we-ghost-rider" | "we-molala" | "we-dark-king" | "we-celestial-veil" | "we-miku-nakano" | "we-gotoubun" | "we-quintuplets" | "we-black-silk-waves" | "we-blue-dragon-logo" | "we-astra-yao" | "we-luo-tianyi-christmas" | "we-mc-northern-light" | "we-mc-falling-snow" | "we-mc-aquarium" | "we-mc-holiday-heart" | "we-mc-fireplace" | "we-mc-panels" | "we-mc-cherry-blossom" | "we-mc-raindrops" | "we-silver-surfer" | "we-girl-behind-curtains" | "we-vagabond-miyamoto" | "we-itachi-crow" | "we-gojo-hollow" | "we-quintuplets-sister" | "we-yuta-okkotsu" | "we-gojo-vs-sukuna-2" | "we-gojo-cursed-world" | "we-gojo-six-eyes" | "we-frieren-blue-horizon" | "we-frieren-blooming-stream" | "we-nissan-skyline-r33-mc" | "we-torii";
 type AppId = "hub" | "spicetify" | "browser" | "pizza" | "roblox" | "messages" | "verai" | "jarvis" | "vertube" | "movies" | "settings" | "games" | "translucenttb" | "wallpaper-engine" | "minecraft" | "rainmeter" | "terminal" | "calculator" | "ghostview" | "links" | "discord" | "vcloud" | "admin" | "appmaker" | string & {};
 type Ps5DesktopShortcut = { id: string; name: string; cover: string };
 type TaskbarPos = "bottom" | "top" | "left" | "right";
@@ -55,13 +55,14 @@ type ColorMode = "dark" | "light";
 type SystemStyle = "vertex" | "macos";
 type TabHideImage = { id: string; name: string; src: string };
 type SystemSettings = { optimized: boolean; fastBoot: boolean; idleLock: boolean; confirm: boolean; cloak: string; cloakName: string; cloakIcon: string; panicKey: string; panicUrl: string; adblock: boolean; adblockUrl: string; deviceName: string; colorMode: ColorMode; systemStyle: SystemStyle; fontStyle: string; tabHide: boolean; tabHideImage: string; tabHideImages: TabHideImage[] };
-const defaultSettings: SystemSettings = { optimized: false, fastBoot: false, idleLock: false, confirm: false, cloak: "none", cloakName: "Vertex-OS", cloakIcon: "", panicKey: "`", panicUrl: "", adblock: false, adblockUrl: "", deviceName: "VERTEX-PC", colorMode: "dark", systemStyle: "vertex", fontStyle: "vertex", tabHide: false, tabHideImage: "iready", tabHideImages: [{ id: "black", name: "Black screen", src: "black" }, { id: "white", name: "White screen", src: "white" }, { id: "iready", name: "I-Ready", src: asset("images/tabhide-iready.png") }, { id: "classroom", name: "Google Classroom", src: asset("images/tabhide-classroom.png") }] };
+const defaultSettings: SystemSettings = { optimized: false, fastBoot: false, idleLock: false, confirm: false, cloak: "none", cloakName: "Vertex OS | 🦃🍂", cloakIcon: "", panicKey: "`", panicUrl: "", adblock: false, adblockUrl: "", deviceName: "VERTEX-PC", colorMode: "dark", systemStyle: "vertex", fontStyle: "vertex", tabHide: false, tabHideImage: "iready", tabHideImages: [{ id: "black", name: "Black screen", src: "black" }, { id: "white", name: "White screen", src: "white" }, { id: "iready", name: "I-Ready", src: asset("images/tabhide-iready.png") }, { id: "classroom", name: "Google Classroom", src: asset("images/tabhide-classroom.png") }] };
 const PASSWORD_KEY = "vertex-password";
 const PROFILE_KEY = "vertex-profile";
 const ACCOUNTS_KEY = "vertex-accounts";
-const VERTEX_VERSION = "4.1";
-const HALLOWEEN_ACTIVE = new Date().getMonth() === 9;
-const SEASON_WALLPAPER: WallpaperId = HALLOWEEN_ACTIVE ? "halloween" : "vertex-studio";
+const VERTEX_VERSION = "4.2";
+const THANKSGIVING_ACTIVE = new Date().getMonth() === 10;
+const SEASON_WALLPAPER: WallpaperId = "vertex-studio";
+const THANKSGIVING_WALLPAPER_ID: WallpaperId = "thanksgiving-snowflakes";
 
 type VertexAccount = { id: string; name: string; createdAt: number; pass?: string; avatar?: string; email?: string };
 
@@ -215,7 +216,7 @@ const pvSrc = (nativeV?: string, lowV?: string) => (!nativeV ? undefined : lowV 
 const BOOT_INTRO_SRC = "https://cineosweb.github.io/Videos/Boot.mp4";
 
 const CLOAKS: Record<string, { title: string; icon: string }> = {
-  none: { title: "Vertex-OS", icon: asset(HALLOWEEN_ACTIVE ? "vertex-hub-logo-halloween.png" : "vertex-hub-logo.png") },
+  none: { title: "Vertex OS | 🦃🍂", icon: asset("vertex-hub-logo.png") },
   google: {
     title: "Google",
     icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAA5FBMVEVHcEz9SlD/TkL/RUH/RUD/RkP4gyr/SUX/Rj//SE3/Yjb/UDn/Szz9TFb/Yi7/WTT8TVn/cyf/Zi7/iRz/fSL/lRb/SEjeuwX/qQ7/nhP/tgv9TFX6yQj/wwn/zAffugr8zgb+zwnzzQb4ywkvhv82qo79zgQek+ApjurzzAPlywIvhv0qifjRyQEth/y5yAKnxwAoivaMxQUak94fj+hzxAtawxdawhgLpa4OncYVltc8wCobvFIMuWgHqp0KorWaxQEnvz4bvUwPumUNumQMumgIr4wIqaIRvFoNu2MKtnRJwh6BPIl6AAAATHRSTlMAWZDK7P8Orf//Gv///+b/5P7////4dor///8qmP/9K0j/tu7/DeYwRP//HWr/rv///v/b///+HMT///+XTvD/5f//yGzw///////mXfQ9oAAAAWBJREFUeAF0z1UCgCAQRdEZ7O7u/W9STPr93oMCcENi2Y5jWwRBM9fz7zl0QeCFcidRHLMeJAkRj6dZdom/0+Uu62FRlpcQQILsfFVfIrqE/wPWoWleEXstYutdgO9dP9wi++/VCt0dx0dwL5u4DvNyiaFywbB1WS6ymfp+rJSMM5g2H7fYjOCsi5wOIAiCKNhRnG1bazv/fG7erFW/VcNezFEsKWVVZk2bOVi0BVuawE9GbcGOJrxoD3DEZD5ZtAcLdsX9vvWSW/ZM5g+H7JnHhFMcsI+CPpwXVOGSBsT8+Xy9VX5qfQerC77yDP94rEvB8/VCscO4z1f49+db8D9BFJEQ6N64/0hyqhVV03hxIo7+eMNLhmnZimLLjut6msCKZ3qhR+wN0/f9IAjD0PV4kV3rW/QoXF5sC4+KcEAShMkWzBeQ+QaFLX5rKrOWzcQjsHbUgCJbThA4lmwXVv8BPaBVEHC66TMAAAAASUVORK5CYII=",
@@ -225,7 +226,7 @@ const CLOAKS: Record<string, { title: string; icon: string }> = {
 
 const wallpapers: Wallpaper[] = [
   { id: "vertex-studio", name: "Vertex Studios", meta: "Animated · Vertex-OS", image: asset("images/vertex-studios-thumb.svg") },
-  { id: "halloween", name: "Halloween Night", meta: "Animated · Spooky", image: asset("images/halloween-thumb.svg") },
+  { id: THANKSGIVING_WALLPAPER_ID, name: "Thanksgiving Snowflakes", meta: "Thanksgiving Event 2026 · 1920 × 1080", video: asset("videos/thanksgiving-snowflakes-2026.mp4") },
   { id: "macos-default", name: "macOS 27", meta: "macOS · Default", image: asset("images/macos-27-home.jpg") },
   { id: "macos-lock", name: "macOS 27 Night", meta: "macOS · Lock screen", image: asset("images/macos-27-lock.jpg") },
   { id: "singularity", name: "Singularity", meta: t("wpMeta.singularity"), video: asset("videos/BlackHole.mp4"), videoLow: asset("videos/low/BlackHole.mp4") },
@@ -1525,7 +1526,7 @@ onSessionClose: (peerCode) => {
   useEffect(() => {
     const root = document.documentElement;
     root.dataset.theme = settings.colorMode === "light" ? "light" : "dark";
-    root.dataset.season = HALLOWEEN_ACTIVE ? "halloween" : "";
+    root.dataset.season = THANKSGIVING_ACTIVE ? "thanksgiving" : "";
     root.dataset.style = settings.systemStyle === "macos" ? "macos" : "";
     root.dataset.font = settings.fontStyle || "vertex";
   }, [settings.colorMode, settings.systemStyle, settings.fontStyle]);
@@ -1537,7 +1538,7 @@ onSessionClose: (peerCode) => {
   const [currentTrack, setCurrentTrack] = useState<{ name: string; artist: string; artwork: string } | null>(null);
 
   const activeWallpaper = wallpapers.find((item) => item.id === wallpaper) ?? customWallpapers.find((item) => item.id === wallpaper) ?? wallpapers[0];
-  const activeLockWallpaper = wallpapers.find((item) => item.id === lockWallpaper) ?? customWallpapers.find((item) => item.id === lockWallpaper) ?? wallpapers[1];
+  const activeLockWallpaper = wallpapers.find((item) => item.id === lockWallpaper) ?? customWallpapers.find((item) => item.id === lockWallpaper) ?? wallpapers[0];
   const pickerWallpapers = useMemo<PickerWallpaper[]>(() => [
     ...customWallpapers,
     ...wallpapers.map((w) => ({ id: w.id, name: w.name, image: w.image, video: w.video })),
@@ -2190,9 +2191,7 @@ onSessionClose: (peerCode) => {
       <div className="wallpaper-layer">
         {activeWallpaper.id === "vertex-studio"
           ? <VertexStudioWallpaper className="wallpaper-scene" />
-          : activeWallpaper.id === "halloween"
-            ? <HalloweenWallpaper className="wallpaper-scene" />
-            : activeWallpaper.image
+          : activeWallpaper.image
             ? <img className="wallpaper-image" src={activeWallpaper.image} alt={`${activeWallpaper.name} wallpaper`} />
             : (phase === "boot" || phase === "desktop")
               ? <video key={activeWallpaper.id} ref={homeVideoRef} className="wallpaper-video" src={bgSrc(activeWallpaper.video, activeWallpaper.videoLow)} preload="metadata" autoPlay muted loop playsInline aria-label={`${activeWallpaper.name} wallpaper`} />
@@ -2328,9 +2327,7 @@ onSessionClose: (peerCode) => {
       <section className={`lock-screen ${phase === "lock" ? "active" : ""}`} onClick={openSignIn} aria-label="Vertex lock screen">
          {activeLockWallpaper.id === "vertex-studio"
           ? <VertexStudioWallpaper className="lock-wallpaper-scene" />
-          : activeLockWallpaper.id === "halloween"
-            ? <HalloweenWallpaper className="lock-wallpaper-scene" />
-            : activeLockWallpaper.image
+          : activeLockWallpaper.image
             ? <img className="lock-wallpaper" src={activeLockWallpaper.image} alt={`${activeLockWallpaper.name} lock wallpaper`} />
             : phase === "lock"
               ? <video key={activeLockWallpaper.id} ref={lockVideoRef} className="lock-wallpaper-video" src={bgSrc(activeLockWallpaper.video, activeLockWallpaper.videoLow)} preload="metadata" autoPlay muted loop playsInline aria-label={`${activeLockWallpaper.name} lock wallpaper`} />
@@ -2390,7 +2387,7 @@ onSessionClose: (peerCode) => {
           onToggleIcons={() => setShowDesktopIcons((v) => !v)}
           onHint={(title, copy) => addToast(title, copy)}
         /> : null}
-        {HALLOWEEN_ACTIVE && <HalloweenDecor />}
+        {THANKSGIVING_ACTIVE ? <ThanksgivingDecor /> : null}
         {rmCfg.showClock && <RainmeterWidget cfg={rmCfg} date={now} tone="home" wallpaper={activeWallpaper} onAlternative={() => setAlternativeOpen(true)} />}
 
         {hasSidebarWidgets ? <aside className={"sidebar alternative-sidebar--" + widgetSide + (widgetLabels ? "" : " widget-labels-hidden")} aria-label="Quick access" style={{ "--widget-scale": widgetScale, "--widget-accent": widgetAccent } as CSSProperties}>
@@ -2656,15 +2653,15 @@ onSessionClose: (peerCode) => {
 
         <InfoModal open={updateOpen} title={t("update.title")} onClose={() => setUpdateOpen(false)}>
           <div className="update-version">{t("update.version")}<strong>v{VERTEX_VERSION}</strong></div>
-          <div className="update-hallo">
-            <span className="update-hallo-emoji">🎃</span>
+          <div className="update-thanks">
+            <span className="update-thanks-emoji">🦃</span>
             <div>
-              <strong>{t("update.halloTitle")}</strong>
-              <span>{t("update.halloSub")}</span>
+              <strong>{t("update.thanksTitle")}</strong>
+              <span>{t("update.thanksSub")}</span>
             </div>
           </div>
           <div className="update-sec">
-            <div className="update-sec-title">{t("update.halloween")} · v{VERTEX_VERSION}</div>
+            <div className="update-sec-title">{t("update.thanksgiving")} · v{VERTEX_VERSION}</div>
             <div className="update-group-label add">{t("update.added")}</div>
             <ul className="update-list update-changes">
               <li className="update-add"><span className="update-sign">+</span>{t("update.h1")}</li>
@@ -6228,6 +6225,7 @@ const SETTINGS_SEARCH: { tab: SettingsTabId; label: string; hint: string }[] = [
   { tab: "home", label: "Language", hint: "Change the OS language / idiom" },
   { tab: "home", label: "Color mode", hint: "Bright (light) or black (dark)" },
   { tab: "personalization", label: "Wallpaper", hint: "Desktop background and lock screen" },
+  { tab: "personalization", label: "Thanksgiving theme", hint: "Thanksgiving Snowflakes event wallpaper" },
   { tab: "personalization", label: "Reset to default wallpaper", hint: "Restore the Vertex Studios wallpaper" },
   { tab: "widgets", label: "Music widgets", hint: "Apple-style now playing widgets for Spicetify and VerTube" },
   { tab: "account", label: "Account name", hint: "The name shown on this device" },
@@ -6236,6 +6234,7 @@ const SETTINGS_SEARCH: { tab: SettingsTabId; label: string; hint: string }[] = [
   { tab: "account", label: "Password", hint: "Lock screen password" },
   { tab: "system", label: "Performance", hint: "Optimization, fast boot, idle lock" },
   { tab: "system", label: "System style", hint: "Switch between Vertex-OS and macOS looks" },
+  { tab: "system", label: "Windows 11", hint: "Upcoming system preview" },
   { tab: "system", label: "Text style", hint: "Change the font used across Vertex-OS" },
   { tab: "colors", label: "Color mode", hint: "Bright or black theme" },
   { tab: "language", label: "Language & region", hint: "Idiom and formatting" },
@@ -6319,6 +6318,7 @@ function SettingsSurface({ settings, updateSetting, faqOpen, setFaqOpen, lang, o
 
   const currentHome = wallpapers.find((w) => w.id === appliedWallpaper);
   const currentLock = wallpapers.find((w) => w.id === appliedLockWallpaper);
+  const thanksgivingWallpaper = wallpapers.find((w) => w.id === THANKSGIVING_WALLPAPER_ID);
   const wallThumb = (id: string) => (id === "vertex-studio" ? asset("images/vertex-studios-thumb.svg") : wallImg(id));
   const avatarNode = avatar ? <AvatarGlyph value={avatar} name={accountName ?? "?"} size={40} /> : <span>{(accountName ?? "?").slice(0, 1).toUpperCase()}</span>;
 
@@ -6469,7 +6469,7 @@ function SettingsSurface({ settings, updateSetting, faqOpen, setFaqOpen, lang, o
           <p className="win-settings-sub">Pick your desktop background and lock screen wallpaper.</p>
           <section className="win-settings-card">
             <div className="win-settings-wp-hero">
-              <span className="win-settings-wp-preview">{wallThumb(appliedWallpaper) ? <img src={wallThumb(appliedWallpaper) as string} alt="" /> : <span className="win-settings-wp-fallback">{currentHome?.name ?? "Wallpaper"}</span>}</span>
+              <span className="win-settings-wp-preview">{appliedWallpaper === THANKSGIVING_WALLPAPER_ID && thanksgivingWallpaper?.video ? <video src={thanksgivingWallpaper.video} muted loop playsInline autoPlay aria-label="Thanksgiving Snowflakes wallpaper preview" /> : wallThumb(appliedWallpaper) ? <img src={wallThumb(appliedWallpaper) as string} alt="" /> : <span className="win-settings-wp-fallback">{currentHome?.name ?? "Wallpaper"}</span>}</span>
               <div>
                 <strong>{currentHome?.name ?? appliedWallpaper}</strong>
                 <small>{currentHome?.meta ?? "Custom wallpaper"}</small>
@@ -6482,10 +6482,37 @@ function SettingsSurface({ settings, updateSetting, faqOpen, setFaqOpen, lang, o
               <button className="outline-button" onClick={() => resetWallpaper("both")}><RotateCcw size={13} /> Reset both</button>
             </div>
           </section>
+          <section className={`win-settings-card thanks-event-card ${appliedWallpaper === THANKSGIVING_WALLPAPER_ID ? "is-active" : ""}`}>
+            <div className="thanks-event-head">
+              <div>
+                <span className="thanks-event-kicker">Special event · 2026</span>
+                <h3>Thanksgiving</h3>
+                <p>Snowflakes, harvest colors and a warm autumn glow across VertexOS.</p>
+              </div>
+              <span className="thanks-event-emoji" aria-hidden="true">🦃</span>
+            </div>
+            <div className="thanks-event-feature">
+              <div className="thanks-event-preview">
+                <video src={thanksgivingWallpaper?.video} preload="metadata" autoPlay muted loop playsInline aria-label="Thanksgiving Snowflakes wallpaper preview" />
+                <span className="thanks-event-live">{appliedWallpaper === THANKSGIVING_WALLPAPER_ID ? "Applied" : "Event live"}</span>
+              </div>
+              <div className="thanks-event-copy">
+                <strong>Thanksgiving Snowflakes</strong>
+                <small>Animated wallpaper · 1920 × 1080 · Event 2026</small>
+                <p>Let snowflakes drift over your desktop with the Thanksgiving amber theme.</p>
+                <div className="win-settings-inline wrap">
+                  <button className="thanks-event-apply" onClick={() => onApplyWallpaper?.(THANKSGIVING_WALLPAPER_ID, "both")}>Apply theme + wallpaper</button>
+                  <button className="outline-button" onClick={() => onApplyWallpaper?.(THANKSGIVING_WALLPAPER_ID, "home")}>Desktop only</button>
+                  <button className="outline-button" onClick={() => onApplyWallpaper?.(THANKSGIVING_WALLPAPER_ID, "lock")}>Lock screen only</button>
+                </div>
+                <span className="thanks-event-note">Seasonal Thanksgiving theme is active this November.</span>
+              </div>
+            </div>
+          </section>
           <section className="win-settings-card">
             <div className="setting-group"><Palette size={13} /> Built-in wallpapers</div>
             <div className="win-settings-wp-grid">
-              {wallpapers.map((wall) => (
+              {wallpapers.filter((wall) => wall.id !== THANKSGIVING_WALLPAPER_ID).map((wall) => (
                 <button key={wall.id} className={`win-settings-wp ${appliedWallpaper === wall.id ? "active" : ""}`} onClick={() => onApplyWallpaper?.(wall.id, "home")} title={wall.name} aria-label={wall.name}>
                   {wallThumb(wall.id) ? <img src={wallThumb(wall.id) as string} alt="" /> : <span className="win-settings-wp-fallback">{wall.name}</span>}
                   <span>{wall.name}</span>
@@ -6555,6 +6582,17 @@ function SettingsSurface({ settings, updateSetting, faqOpen, setFaqOpen, lang, o
             <div className="win-settings-choice">
               <button className={`win-settings-choice-card ${settings.systemStyle !== "macos" ? "active" : ""}`} onClick={() => applySystemStyle("vertex")}><span className="win-settings-choice-swatch vertex" /><strong>Vertex-OS</strong><small>Default windows, dock and accent</small></button>
               <button className={`win-settings-choice-card ${settings.systemStyle === "macos" ? "active" : ""}`} onClick={() => applySystemStyle("macos")}><span className="win-settings-choice-swatch macos" /><strong>macOS 27 · Golden Gate</strong><small>Apple-style menu bar, windows and wallpaper</small></button>
+            </div>
+            <div className="win-settings-upcoming" role="note" aria-label="Upcoming system: Windows 11">
+              <span className="win-settings-upcoming-swatch" aria-hidden="true">
+                <span className="win-settings-upcoming-logo"><i /><i /><i /><i /></span>
+              </span>
+              <div className="win-settings-upcoming-copy">
+                <span className="win-settings-upcoming-kicker">Upcoming system</span>
+                <strong>Windows 11</strong>
+                <small>Fluent surfaces, a centered taskbar and rounded windows are coming to a future VertexOS release.</small>
+              </div>
+              <span className="win-settings-upcoming-badge">Coming soon</span>
             </div>
           </section>
           <section className="win-settings-card">

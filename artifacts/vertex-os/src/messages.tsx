@@ -55,7 +55,7 @@ import {
 import { assetUrl } from "./asset-map";
 
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const SITE_LOGO = assetUrl(base, new Date().getMonth() === 9 ? "vertex-hub-logo-halloween.png" : "vertex-hub-logo.png");
+const SITE_LOGO = assetUrl(base, "vertex-hub-logo.png");
 
 const PROF_KEY = "vertex-msgs-profile-v2";
 const DMS_KEY = "vertex-msgs-dms-v3";
