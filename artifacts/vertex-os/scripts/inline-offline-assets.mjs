@@ -25,7 +25,12 @@ const htmlPath = join(root, "dist", "single", "index.html");
 /** Folders under /public to embed. Order does not matter. */
 const INCLUDE_DIRS = ["images", "fonts", "wallpapers", "themes"];
 /** Individual files at the root of /public to embed. */
-const INCLUDE_FILES = ["vertex-hub-logo.png", "favicon.svg"];
+const INCLUDE_FILES = [
+  "vertex-hub-logo-thanksgiving.png",
+  "vertex-hub-logo-thanksgiving-192.png",
+  "vertex-hub-logo-thanksgiving-512.png",
+  "favicon.svg",
+];
 
 const MIME = {
   ".png": "image/png",
